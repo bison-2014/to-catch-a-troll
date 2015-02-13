@@ -1,15 +1,17 @@
 class Query < ActiveRecord::Base
   def new
-    @query = Query.new
+    @query = Query.new(url: params[:url])
   end
 
   def edit
-    @query = Query.find(params[:snippet_id])
+    @query = Query.find(params[:query_id])
     cobweb = Cobweb.new
-    page = c.get(:url)
-    file = File.new("output.html", "wb") { |f| f.write(page[:body])}
-    @query.update_attributes(response: File.absolute_path(file))
+    Resque.enqueue(TaskWorker, @query.id)
     redirect_to @query, notice: "Successful response to query"
+  end
+
+  def show
+    @query = Query.find(params[:id])
   end
 
 end
