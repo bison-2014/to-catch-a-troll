@@ -13,7 +13,17 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem 'cobweb', '~> 1.0.25'
+gem 'nokogiri'
+gem 'redis'
+gem 'addressable'
+gem 'awesome_print'
+gem 'haml'
+gem 'json'
+gem 'redis-namespace'
+gem 'sinatra'
+gem 'slop'
+gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -26,6 +36,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'sidekiq', '~> 3.3.2'
+gem 'celluloid'
+gem 'connection_pool'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
