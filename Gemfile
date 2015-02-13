@@ -23,7 +23,7 @@ gem 'json'
 gem 'redis-namespace'
 gem 'sinatra'
 gem 'slop'
-gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
