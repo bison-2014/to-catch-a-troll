@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
+  # To embed the Resque admin panel in a page of your Rails app
+  resources :tasks
+  root to: 'tasks#new'
+  mount Resque:: Server => "/resque"
+
   # Example resource route with options:
   #   resources :products do
   #     member do
