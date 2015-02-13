@@ -18,6 +18,16 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 
 # For Background jobs
+gem 'cobweb', '~> 1.0.25'
+gem 'nokogiri'
+gem 'redis'
+gem 'addressable'
+gem 'awesome_print'
+gem 'haml'
+gem 'json'
+gem 'redis-namespace'
+gem 'sinatra'
+gem 'slop'
 gem 'resque', require: "resque/server"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
