@@ -17,13 +17,15 @@ ActiveRecord::Schema.define(version: 20150213231817) do
   enable_extension "plpgsql"
 
   create_table "inquiries", force: :cascade do |t|
-    t.string "url"
-    t.string "response"
+    t.string  "url"
+    t.string  "search_strings"
+    t.integer "recursion_depth"
+    t.integer "user_id"
   end
 
   create_table "pages", force: :cascade do |t|
-    t.string "title"
-    t.string "body"
+    t.text "base_url"
+    t.text "body"
   end
 
 end
