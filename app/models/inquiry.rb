@@ -8,8 +8,8 @@ class Inquiry < ActiveRecord::Base
     end
   end
 
-  def edit(inquiry_id)
-    @inquiry = Inquiry.find(inquiry_id)
+  def edit
+    @inquiry = Inquiry.find(params[:id])
     Resque.enqueue(TaskWorker, @inquiry.id)
     puts "Successful response to Inquiry"
   end
