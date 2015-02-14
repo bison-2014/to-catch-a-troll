@@ -26,6 +26,11 @@ gem 'json'
 gem 'redis-namespace'
 gem 'sinatra'
 gem 'slop'
+
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+
+# For Background jobs
 gem 'resque', require: "resque/server"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
@@ -56,8 +61,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-	gem 'simplecov', :require => false
+  gem 'simplecov', :require => false
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-
