@@ -30,9 +30,6 @@ gem 'slop'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-
 # For Background jobs
 gem 'resque', require: "resque/server"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -45,6 +42,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sidekiq', '~> 3.3.2'
 gem 'celluloid'
 gem 'connection_pool'
+
+gem 'capybara'
+gem 'rack_session_access'
+gem 'factory_girl_rails'
+gem 'rails_12factor'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -59,7 +61,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
+	gem 'simplecov', :require => false
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
