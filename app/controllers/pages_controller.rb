@@ -17,13 +17,12 @@ class PagesController < ApplicationController
   def create
     @page = Page.new(page_params)
 
-      if @page.save
-        Resque.enqueue(TaskWorker, @page.id)
-       redirect_to @page, notice:"Scraping Website"
-      else
-        flash[:errors] = "oopsies"
-        redirect_to :back
-      end
+    if @page.save
+      Resque.enqueue(TaskWorker, @page.id)
+     redirect_to @page, notice:"Scraping Website"
+    else
+      flash[:errors] = "oopsies"
+      redirect_to :back
     end
   end
 
