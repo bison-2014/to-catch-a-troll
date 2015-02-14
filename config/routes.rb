@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'page#new'
+  root 'pages#new'
   resources :inquiries, only: [:new, :create]
   resources :pages, :only => [:index, :new, :create, :update, :delete]
   # Example of regular route:
