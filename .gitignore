@@ -12,3 +12,6 @@
 !/log/.keep
 /tmp
 .envs
+/spec/tmp
+/coverage
+.DS_Store
