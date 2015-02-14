@@ -1,6 +1,6 @@
 class Page < ActiveRecord::Base
   searchable do
-    text :title
+    string :base_url
     text :body
   end
 end
