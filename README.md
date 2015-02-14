@@ -1,12 +1,12 @@
 # ToCatchATroll
-Group Members & Github Handles
+**Group Members & Github Handles**
 
-Dalal AlRayes - @dalrayes
-Philipp Blume - @pgblu
-Heejin Park - @soborok
-Adriana Canstaneda- @alcastaneda
+* Dalal AlRayes - [@dalrayes](https://github.com/dalrayes)
+* Philipp Blume - [@pgblu](https://github.com/pgblu)
+* Heejin Park - [@soborok](https://github.com/soborok)
+* Adriana Canstaneda - [@alcastaneda](https://github.com/alcastaneda)
 
-Description:
+**Description:**
 A rails app that is a resource for monitoring negative references to and vulnerabilities in one's personal data.
 
 **How to install:**
