@@ -26,8 +26,6 @@ gem 'slop'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
 
 # For Background jobs
 gem 'cobweb', '~> 1.0.25'
