@@ -26,6 +26,14 @@ gem 'json'
 gem 'redis-namespace'
 gem 'sinatra'
 gem 'slop'
+
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
+# For Background jobs
 gem 'resque', require: "resque/server"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
