@@ -18,8 +18,8 @@ class PagesController < ApplicationController
     @page = Page.new(page_params)
 
       if @page.save
-        Resque.enqueue(SnippetHighlighter, @snippet.id)
-       redirect_to @snippet, notice:"Scraping Website"
+        Resque.enqueue(TaskWorker, @page.id)
+       redirect_to @page, notice:"Scraping Website"
       else
         flash[:errors] = "oopsies"
         redirect_to :back
