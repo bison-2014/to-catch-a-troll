@@ -1,0 +1,15 @@
+<%= form_for(@page) do |f| %>
+  <% if @page.errors.any? %>
+      <ul>
+      <% @page.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+  <% end %>
+
+  <div class="form">
+    <%= f.label :base_url %><br>
+    <%= f.text_field :base_url %>
+    <%= f.submit %>
+  </div>
+<% end %>
