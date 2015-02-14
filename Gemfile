@@ -30,9 +30,6 @@ gem 'slop'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-
 # For Background jobs
 gem 'resque', require: "resque/server"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -45,6 +42,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sidekiq', '~> 3.3.2'
 gem 'celluloid'
 gem 'connection_pool'
+
+gem 'capybara'
+gem 'rack_session_access'
+gem 'factory_girl_rails'
+gem 'rails_12factor'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
