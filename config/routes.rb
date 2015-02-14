@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 =begin
   resources :tasks
   root to: 'tasks#new'
-  mount Resque:: Server => "/resque"
+  mount Resque::Server => "/resque"
 =end
   # Example resource route with options:
   #   resources :products do
