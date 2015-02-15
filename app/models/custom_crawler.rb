@@ -1,4 +1,6 @@
 class CustomCrawler
+  require 'digest/md5'
+
   def initialize
     option_hash = { crawl_limit_by_page: true }
     @cw = Cobweb.new(option_hash)
