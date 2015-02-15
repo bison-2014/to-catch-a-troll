@@ -1,6 +1,9 @@
 class CustomCrawler
+  require 'digest/md5'
+
   def initialize
-    @cw = Cobweb.new
+    option_hash = { crawl_limit_by_page: true }
+    @cw = Cobweb.new(option_hash)
   end
 
   def recursive_get(base_url, depth = 0)
@@ -12,7 +15,8 @@ class CustomCrawler
       end
       if f && f[:status_code] == 200
         f[:body].force_encoding('iso-8859-1').encode('utf-8')
-        Page.create(base_url: base_url, body: f[:body]) unless Page.find_by(base_url: base_url)
+        checksum = Digest::MD5.hexdigest(f[:body].to_s)
+        Page.create(base_url: base_url, body: f[:body], checksum: checksum) unless Page.find_by(base_url: base_url)
         f[:links][:links].each { |link| recursive_get(link, depth-1) }
       end
     end

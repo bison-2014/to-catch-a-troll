@@ -27,6 +27,7 @@ gem 'redis-namespace'
 gem 'sinatra'
 gem 'slop'
 
+
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 

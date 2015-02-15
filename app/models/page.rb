@@ -3,4 +3,6 @@ class Page < ActiveRecord::Base
     string :base_url
     text :body
   end
+
+#  handle_asynchronously :solr_index
 end
