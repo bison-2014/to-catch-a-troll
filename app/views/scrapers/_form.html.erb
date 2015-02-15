@@ -1,0 +1,15 @@
+<%= form_for(@scraper) do |f| %>
+  <% if @scraper.errors.any? %>
+      <ul>
+      <% @scraper.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+  <% end %>
+
+  <div class="form">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+    <%= f.submit %>
+  </div>
+<% end %>
