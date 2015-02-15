@@ -1,0 +1,10 @@
+<h2>Results found</h2>
+<h2><%= @results_found.count %></h2>
+
+<h2><%= @usersearch.hits %></h2>
+<% @usersearch.hits.each do |hit| %>
+<li><%= hit.inspect%></li>
+<%end%>
+
+ </h2>
+
