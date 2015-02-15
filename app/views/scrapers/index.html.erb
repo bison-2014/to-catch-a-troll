@@ -1,0 +1,10 @@
+<ul>
+	<% @scrapers.each do |scraper| %>
+	<li><%= scraper.url %><br />
+	Crawling was initiated at <%= scraper.initiated_at %><br />
+	by Administrator
+	</li>
+	<% end %>
+	<br />
+</ul>
+<%= link_to 'Scrape a website', new_scraper_path %>
