@@ -1,0 +1,15 @@
+<header>
+	<p id="logo">To Catch A Troll</p>
+
+	<nav>
+		<ul>
+			<li id="nav-menu">DUMMY</li>
+			<li id="nav-menu">MENU</li>
+			<% if user_signed_in? %>
+		  <li id="nav-menu"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+		  <% else %>
+		  <li id="nav-menu"> </li>
+		  <% end %>
+		</ul>
+	</nav>
+</header>
