@@ -8,10 +8,11 @@ before_action :authenticate_user!
       render 'search'
     end
     @usersearch = Page.search do
-      fulltext params[:search]
-
+      fulltext params[:search] do
+        # highlight :body
+      end
     end
-    @results_found = @usersearch.results
+    @results_found = @usersearch.hits
   end
 
 end
