@@ -17,3 +17,18 @@
 body{
   font-family: 'Oxygen', sans-serif;
 }
+
+p#logo {
+	display: inline-block;
+	width: 200px;
+}
+
+nav, nav ul {	
+	display: inline-block;
+	float: right;
+}
+
+li#nav-menu {
+	display: inline-block;
+	width: 100px;
+}
