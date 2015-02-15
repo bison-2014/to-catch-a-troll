@@ -15,4 +15,9 @@
 /spec/tmp
 /coverage
 .DS_Store
-/solr
+/solr/data/*
+/solr/default/*
+/solr/development/*
+/solr/pids/*
+/solr/test/*
+dump.rdb
