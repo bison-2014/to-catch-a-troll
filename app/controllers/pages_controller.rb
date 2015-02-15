@@ -9,6 +9,7 @@ before_action :authenticate_user!
     end
     @usersearch = Page.search do
       fulltext params[:search]
+
     end
     @results_found = @usersearch.results
   end
