@@ -4,7 +4,7 @@
 * Dalal AlRayes - [@dalrayes](https://github.com/dalrayes)
 * Philipp Blume - [@pgblu](https://github.com/pgblu)
 * Heejin Park - [@soborok](https://github.com/soborok)
-* Adriana Canstaneda - [@alcastaneda](https://github.com/alcastaneda)
+* Adriana Castaneda - [@alcastaneda](https://github.com/alcastaneda)
 
 **Description:**
 A rails app that is a resource for monitoring negative references to and vulnerabilities in one's personal data.
