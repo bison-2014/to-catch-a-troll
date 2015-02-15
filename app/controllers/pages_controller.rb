@@ -15,15 +15,15 @@ class PagesController < ApplicationController
   # POST /pages
   # POST /pages.json
   def create
-    @page = Page.new(page_params)
-
-    if @page.save
-      Resque.enqueue(TaskWorker, @page.id)
-     redirect_to @page, notice:"Scraping Website"
-    else
-      flash[:errors] = "oopsies"
-      redirect_to :back
-    end
+    page_url = page_params[:base_url]
+    
+    # if page_url.valid?
+      Resque.enqueue(TaskWorker, page_url)
+     redirect_to '/'  #@page, notice:"Scraping Website"
+    # else
+    #   flash[:errors] = "oopsies"
+    #   redirect_to :back
+    # end
   end
 
   # PATCH/PUT /pages/1
@@ -35,6 +35,11 @@ class PagesController < ApplicationController
         
       end
     end
+  end
+
+  def show
+    # @page = Page.find(page_params)
+    @message = "YOU ENTERED URL"
   end
 
   # DELETE /pages/1
@@ -51,6 +56,6 @@ class PagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def page_params
-      params.require(:page).permit(:base_url)
+      params.require(:page).permit(:base_url, :id)
     end
 end

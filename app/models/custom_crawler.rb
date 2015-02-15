@@ -16,5 +16,6 @@ class CustomCrawler
         f[:links][:links].each { |link| recursive_get(link, depth-1) }
       end
     end
+    nil
   end
 end
