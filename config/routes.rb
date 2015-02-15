@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'pages#new'
-  resources :inquiries, only: [:new, :create]
+  root 'scrapers#index'
+  
+  resources :scrapers, only: [:index, :new, :create]
   resources :pages, :only => [:index, :new, :show, :create, :update, :delete]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
