@@ -12,7 +12,7 @@ before_action :authenticate_user!
     website_url = scraper_params[:url]
 
     @scraper = Scraper.create(url: website_url)
-  
+
     Resque.enqueue(TaskWorker, website_url)
     redirect_to scrapers_path
   end
