@@ -26,6 +26,7 @@ gem 'json'
 gem 'redis-namespace'
 gem 'sinatra'
 gem 'slop'
+gem 'digest/md5'
 
 gem 'sunspot_rails'
 gem 'sunspot_solr'
