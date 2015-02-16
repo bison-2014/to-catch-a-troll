@@ -1,16 +1,16 @@
 <%=@message%>
 <h1>Search Results</h1>
-<h2>Results found:<%= @results_found.count %></h2>
+<h2>Results found: <%= @results_found.count %></h2>
 
-<% @usersearch.hits.each do |hit| %>
+  <% @usersearch.hits.each do |hit| %>
+  <div class="search_result">
 
-Result<br>
-Hit Score: <%= hit.score%><br>
-<a href="<%=hit.result.base_url%>"><%= hit.result.base_url%></a><br><br>
-<% @usersearch.hits.each do |hit| %>
-  <% hit.highlights(:body).each do |highlight| %>
-    <li> <%= highlight.format -%> </li>
+    <% hit.highlights(:body).each do |highlight| %>
+  <p class="highlight"> <%= highlight.format {|word| "#{word}" }%></p>
   <% end %>
-<% end -%>
-<%end%>
+
+  Hit Score: <%= hit.score%><br>
+  <a class="search_link" href="<%=hit.result.base_url%>" target="_blank"><%= hit.result.base_url%></a><br><br>
+  </div>
+  <% end %>
 
