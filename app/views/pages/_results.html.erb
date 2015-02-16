@@ -6,7 +6,7 @@
   <div class="search_result">
 
     <% hit.highlights(:body).each do |highlight| %>
-  <p class="highlight"> <%= highlight.format {|word| word} %></p>
+  <p class="highlight"> <%= highlight.format {|word| "<span class='high'>#{word}</span>" }%></p>
   <% end %>
 
   Hit Score: <%= hit.score%><br>
