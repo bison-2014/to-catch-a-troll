@@ -7,6 +7,7 @@ class CustomCrawler
   end
 
   def recursive_get(base_url, depth = 2)
+    target = Target.find_by(base_url: base_url)
     unless depth < 0
       begin
         f = @cw.get(base_url)
