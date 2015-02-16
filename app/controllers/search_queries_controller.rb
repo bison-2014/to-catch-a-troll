@@ -1,5 +1,5 @@
 class SearchQueriesController < ApplicationController
-  
+
   # before_action :authenticate_user!
 
   def index
@@ -12,12 +12,13 @@ class SearchQueriesController < ApplicationController
 
   def edit
     @search_query = SearchQuery.find(search_query_params)
+    @search_query.update_attributes(search_query_params)
+    redirect_to search_queries_path
   end
 
   def create
-    query = SearchQuery.create(user: current_user)
-    query.update_attributes(search_query_params)
-    query.save
+    @search_query = SearchQuery.create(user: current_user)
+    @search_query.update_attributes(search_query_params)
     redirect_to search_queries_path
   end
 
