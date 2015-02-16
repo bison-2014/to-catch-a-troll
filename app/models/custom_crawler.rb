@@ -6,7 +6,12 @@ class CustomCrawler
     @cw = Cobweb.new(option_hash)
   end
 
+<<<<<<< HEAD
   def recursive_get(base_url, depth = 0)
+=======
+  def recursive_get(base_url, depth = 2)
+    target = Target.find_by(base_url: base_url)
+>>>>>>> dfcf42e... models changes to incorporate target table logic in custom_crawler & user
     unless depth < 0
       begin
         f = @cw.get(base_url)
