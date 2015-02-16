@@ -34,12 +34,19 @@ li#nav-menu {
 	width: 100px;
 }
 
+#search{
+  width:600px;
+  height:80px;
+}
 .search_result{
   padding-left: 5px;
   background-color: #E8E8E8;
   margin-bottom: 10px;
 }
 
+.high{
+  color:red;
+}
 .highlight{
   font-weight: bold;
 }
