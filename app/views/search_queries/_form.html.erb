@@ -1,0 +1,23 @@
+<%= form_for(@search_query) do |f| %>
+  <% if @search_query.errors.any? %>
+      <ul>
+      <% @search_query.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+  <% end %>
+
+  <div class="form">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %><br />
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %><br />
+    <%= f.label :address %>
+    <%= f.text_field :address %><br />
+    <%= f.label :zipcode %>
+    <%= f.text_field :zipcode %><br />
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %><br />
+    <%= f.submit %>
+  </div>
+<% end %>
