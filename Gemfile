@@ -46,7 +46,6 @@ gem 'connection_pool'
 
 gem 'capybara'
 gem 'rack_session_access'
-gem 'factory_girl_rails'
 gem 'rails_12factor'
 
 # Use Unicorn as the app server
@@ -63,6 +62,7 @@ group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   gem 'simplecov', :require => false
+  gem 'factory_girl_rails'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end

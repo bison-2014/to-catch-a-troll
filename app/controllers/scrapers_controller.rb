@@ -1,5 +1,7 @@
 class ScrapersController < ApplicationController
-before_action :authenticate_user!
+  
+  # before_action :authenticate_user!
+
   def index
     @scrapers = Scraper.all
   end
