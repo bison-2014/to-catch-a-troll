@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150216210033) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "search_queries", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "first_name"
@@ -47,6 +48,8 @@ ActiveRecord::Schema.define(version: 20150216210033) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
 
+=======
+>>>>>>> f8aafdc... craigslist lookup functionality, to be encapsulated for: sanitizer options, user search range delimiting, and recursive get logic only
   create_table "targets", force: :cascade do |t|
     t.string "name"
     t.string "base_url"

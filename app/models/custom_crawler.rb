@@ -11,7 +11,10 @@ class CustomCrawler
 =======
   def recursive_get(base_url, depth = 2)
     target = Target.find_by(base_url: base_url)
+<<<<<<< HEAD
 >>>>>>> dfcf42e... models changes to incorporate target table logic in custom_crawler & user
+=======
+>>>>>>> 19607c2... models changes to incorporate target table logic in custom_crawler & user
     unless depth < 0
       begin
         f = @cw.get(base_url)
