@@ -1,5 +1,5 @@
 class ScrapersController < ApplicationController
-  
+
   # before_action :authenticate_user!
 
   def index
@@ -11,11 +11,9 @@ class ScrapersController < ApplicationController
   end
 
   def create
-    website_url = scraper_params[:url]
+    @scraper = Scraper.create(url: target.url)
 
-    @scraper = Scraper.create(url: website_url)
-
-    Resque.enqueue(TaskWorker, website_url)
+    Resque.enqueue(TaskWorker, target.id)
     redirect_to scrapers_path
   end
 
