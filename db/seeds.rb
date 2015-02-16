@@ -1,7 +1,6 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'csv'
+
+
+CSV.read(Rails.root + 'lib/assets/LookupCraigsZip2010.csv', {headers: true}).each do |row|
+  CraigslistLookup.create!(zip: row[1], zip_name: row[2], craigslist_subdomain: row[0])
+end
