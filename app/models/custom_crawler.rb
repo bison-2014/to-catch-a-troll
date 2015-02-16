@@ -13,7 +13,7 @@ class CustomCrawler
       rescue
         puts "a connection was refused, move on"
       end
-      if f && f[:status_code] == 200
+      if f && f[:status_code] == 200 && !f.is_image?
         f[:body].force_encoding('iso-8859-1').encode('utf-8')
         checksum = Digest::MD5.hexdigest(f[:body].to_s)
         Page.create(base_url: base_url, body: f[:body], checksum: checksum) unless Page.find_by(base_url: base_url)
