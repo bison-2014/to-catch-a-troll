@@ -3,16 +3,19 @@ class PagesController < ApplicationController
 # before_action :authenticate_user!
 
   def search
-    if params[:search].blank?
-      flash[:notice] = "Please enter valid keywords"
-      render 'search'
+    if Page.count > 0
+      @usersearch = Page.search do
+      if params[:search].blank?
+        flash[:notice] = "Please enter valid keywords"
+        render 'search'
+      end
+        fulltext params[:search]
+          # highlight :body
+      end
+      @results_found = @usersearch.hits
+    else
+      @message = "Start your first search"
     end
-    # @usersearch = Page.search do
-    #   fulltext params[:search] do
-    #     # highlight :body
-    #   end
-    # end
-    # @results_found = @usersearch.hits
   end
 
 end

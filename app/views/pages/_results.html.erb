@@ -1,14 +1,11 @@
+<%=@message%>
 <h1>Search Results</h1>
 <h2>Results found:<%= @results_found.count %></h2>
 
 <% @usersearch.hits.each do |hit| %>
-<%#= hit.inspect%>
-<li>Hit Score: <%= hit.score%></li>
-<li><a href="<%= hit.result.base_url%>"><%= hit.result.base_url%>"</a></li><br>
+
+Result<br>
+Hit Score: <%= hit.score%><br>
+<a href="<%=hit.result.base_url%>"><%= hit.result.base_url%></a><br><br>
 <%end%>
-
-
-
-
- </h2>
 
