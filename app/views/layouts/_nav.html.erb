@@ -1,14 +1,14 @@
 <header>
-	<p id="logo"><%= link_to 'To Catch A Troll', url: '/' %></p>
+	<p id="logo">To Catch A Troll</p>
 
 	<nav>
 		<ul>
 			<li id="nav-menu"><%= link_to 'Search', search_path %></li>
 			<li id="nav-menu"><%= link_to 'Scraper', scrapers_path %></li>
 			<% if user_signed_in? %>
-		  <li id="nav-menu"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+		  <li id="nav-menu"><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
 		  <% else %>
-		  <li id="nav-menu"> </li>
+		  <li id="nav-menu"><%= link_to 'Login', new_user_session_path %></li>
 		  <% end %>
 		</ul>
 	</nav>

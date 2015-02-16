@@ -6,7 +6,7 @@ class CustomCrawler
     @cw = Cobweb.new(option_hash)
   end
 
-  def recursive_get(base_url, depth = 0)
+  def recursive_get(base_url, depth = 2)
     unless depth < 0
       begin
         f = @cw.get(base_url)
