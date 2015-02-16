@@ -1,0 +1,2 @@
+class TargetController < ApplicationController
+  def
