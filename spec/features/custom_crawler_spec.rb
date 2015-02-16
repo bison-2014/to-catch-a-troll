@@ -1,8 +1,8 @@
 require 'spec_helper'
 # require 'custom_crawler'
 
-describe "CustomCrawler" do
-  describe ".recursive_get" do
+xdescribe "CustomCrawler" do
+  xdescribe ".recursive_get" do
     let (:url)        { "http://www.example.com" }
     let (:cw)         { Cobweb.new }
     let (:body)       { cw.get(url)[:body] }
