@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150215182409) do
+ActiveRecord::Schema.define(version: 20150216210033) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "craigslist_lookups", force: :cascade do |t|
+    t.integer "zip"
+    t.string  "zip_name"
+    t.string  "craigslist_subdomain"
+  end
 
   create_table "pages", force: :cascade do |t|
     t.string   "base_url"
@@ -29,6 +35,12 @@ ActiveRecord::Schema.define(version: 20150215182409) do
     t.string   "response"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "targets", force: :cascade do |t|
+    t.string "name"
+    t.string "base_url"
+    t.string "sanitize_options"
   end
 
   create_table "users", force: :cascade do |t|
