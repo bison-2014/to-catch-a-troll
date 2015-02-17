@@ -50,6 +50,8 @@ gem 'capybara'
 gem 'rack_session_access'
 gem 'rails_12factor'
 
+gem 'clockwork'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
