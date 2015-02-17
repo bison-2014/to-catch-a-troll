@@ -7,12 +7,12 @@ class CustomCrawler
   end
 
   def recursive_get(base_url, depth = 2)
-    options = if (target = Target.find_by(base_url: base_url))
-      eval(target.options)
-    else
-      elements: ["html", "div", "p", "span"]
-    end
     unless depth < 0
+      if (target = Target.find_by(base_url: base_url))
+        options = eval(target.sanitize_options)
+      else
+        options = { elements: ["html", "div", "p", "span"] }
+      end
       begin
         f = @cw.get(base_url)
       rescue
@@ -23,7 +23,7 @@ class CustomCrawler
       end
       if f
         && f[:status_code] == 200
-        && ![".jpg", ".png", ".gif"].any? {|extension| f[:base_url].include? (extension)}
+        && ![".jpg", ".png", ".gif", ".tiff", ".swf"].any? {|extension| f[:base_url].include? (extension)}
         f[:body].force_encoding('iso-8859-1').encode('utf-8')
         sanitized_file = Sanitize.document(f[:body], options_hash)
         Page.create(base_url: base_url, body: sanitized_file, target_id: target.id)
@@ -32,4 +32,5 @@ class CustomCrawler
     end
     nil
   end
+
 end
