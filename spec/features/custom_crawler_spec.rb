@@ -1,6 +1,6 @@
-require 'spec_helper'
-# require 'custom_crawler'
+require 'rails-helper'
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -73,3 +73,5 @@ xdescribe "CustomCrawler" do
     end
   end
 end
+=======
+>>>>>>> 4d040ac... resolved conflict
