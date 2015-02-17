@@ -27,6 +27,7 @@ class SearchQueriesController < ApplicationController
   end
 
 
+
   private
 
   def search_query_params
