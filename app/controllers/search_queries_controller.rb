@@ -11,7 +11,11 @@ class SearchQueriesController < ApplicationController
   end
 
   def edit
-    @search_query = SearchQuery.find(search_query_params)
+   @search_query = SearchQuery.find_by(id: params[:id])
+  end
+
+  def update
+    @search_query = SearchQuery.find_by(id: params[:id])
     @search_query.update_attributes(search_query_params)
     redirect_to search_queries_path
   end
