@@ -1,12 +1,16 @@
 
-<%#= form_tag(search_path, :method => "get", id: "search-form") do %>
-  <%#= text_field_tag :search, params[:search], placeholder: "Enter keyword" %>
-  <%#= submit_tag "Search", :name => nil %>
-<%# end %>
-
-
 <%= render 'search_queries/index' %>
 
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:target, "1") %>
+  <%= radio_button_tag(:target, "1") %>
+   <%= label_tag(:target, "2") %>
+  <%= radio_button_tag(:target, "2") %>
+   <%= label_tag(:target, "3") %>
+  <%= radio_button_tag(:target, "3") %>
+
+  <%= submit_tag("search") %>
+<% end %>
 
 <%= render 'results' if @results_found %>
 

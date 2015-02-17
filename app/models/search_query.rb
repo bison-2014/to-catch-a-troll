@@ -3,8 +3,8 @@ class SearchQuery < ActiveRecord::Base
 
 	validates :user, presence: true
 
-	def search_string
-		"#{self.first_name} #{self.last_name} #{self.address} #{self.zipcode} #{self.phone_number}"
+	def search_array
+    search_array =[self.first_name,  self.last_name, self.address, self.zipcode, self.phone_number]
 	end
 end
 

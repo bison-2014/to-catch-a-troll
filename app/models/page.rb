@@ -5,9 +5,10 @@ class Page < ActiveRecord::Base
 
   searchable do
     string :base_url
-    text :body, :stored =>true do
+    text   :body, :stored =>true do
       strip_tags(body)
     end
+    integer   :target_id, :references => Target
   end
 #  handle_asynchronously :solr_index
 
