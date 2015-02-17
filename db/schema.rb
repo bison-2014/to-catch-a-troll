@@ -49,9 +49,11 @@ ActiveRecord::Schema.define(version: 20150216210033) do
   end
 
   create_table "targets", force: :cascade do |t|
-    t.string "name"
-    t.string "base_url"
-    t.string "sanitize_options"
+    t.string   "name"
+    t.string   "base_url"
+    t.string   "sanitize_options"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
