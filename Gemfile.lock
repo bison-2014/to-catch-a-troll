@@ -55,6 +55,9 @@ GEM
       xpath (~> 2.0)
     celluloid (0.16.0)
       timers (~> 4.0.0)
+    clockwork (1.1.0)
+      activesupport
+      tzinfo
     cobweb (1.0.25)
       addressable
       awesome_print
@@ -265,6 +268,7 @@ DEPENDENCIES
   byebug
   capybara
   celluloid
+  clockwork
   cobweb (~> 1.0.25)
   coffee-rails (~> 4.1.0)
   connection_pool
