@@ -1,2 +1,4 @@
 class TargetController < ApplicationController
-  def
+  def foo
+  end
+end
