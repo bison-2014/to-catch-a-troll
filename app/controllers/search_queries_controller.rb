@@ -17,13 +17,13 @@ class SearchQueriesController < ApplicationController
   def update
     @search_query = SearchQuery.find_by(id: params[:id])
     @search_query.update_attributes(search_query_params)
-    redirect_to search_queries_path
+    redirect_to home_path
   end
 
   def create
     @search_query = SearchQuery.create(user: current_user)
     @search_query.update_attributes(search_query_params)
-    redirect_to search_queries_path
+    redirect_to home_path
   end
 
 

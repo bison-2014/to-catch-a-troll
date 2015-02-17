@@ -4,9 +4,9 @@ before_action :authenticate_user!
 
   def search
   @query = SearchQuery.find_by(user_id: current_user.id)
-  term = @query.search_string
+  term = @query.search_string if @query
 
-    if Page.count > 0
+    if term
       @usersearch = Page.search do
         fulltext term do
           highlight :body
