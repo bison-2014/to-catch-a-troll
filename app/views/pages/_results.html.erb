@@ -1,5 +1,5 @@
 <%=@message%>
-<h1>Search Results</h1>
+<h1>Your Profile Information Report</h1>
 <h2>Results found: <%= @results_found.count %></h2>
 
   <% @usersearch.hits.each do |hit| %>
@@ -10,7 +10,7 @@
   <% end %>
 
   Hit Score: <%= hit.score%><br>
+  Scraped at: <%=hit.result.updated_at.strftime("%m-%d-%Y")%><br>
   <a class="search_link" href="<%=hit.result.base_url%>" target="_blank"><%= hit.result.base_url%></a><br><br>
   </div>
   <% end %>
-
