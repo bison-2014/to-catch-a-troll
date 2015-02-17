@@ -5,6 +5,7 @@
   <h3>Address: <%= @query.address %><h3/>
   <h3>Zipcode: <%= @query.zipcode %><h3/>
   <h3>Phone Number: <%= @query.phone_number %><h3/>
+  <%= link_to 'Edit your Profile', edit_search_query_path(@query) %>
 <% else %>
 	<%= link_to 'Enter your Profile Information', new_search_query_path %>
 <% end %>
