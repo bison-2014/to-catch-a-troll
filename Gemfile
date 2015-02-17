@@ -50,8 +50,11 @@ gem 'capybara'
 gem 'rack_session_access'
 gem 'rails_12factor'
 gem "fakeweb", "~> 1.3"
+<<<<<<< HEAD
 
 gem 'clockwork'
+=======
+>>>>>>> 3077b55895f33effc51090adc48a21c3f1b91f48
 
 # Use Unicorn as the app server
 # gem 'unicorn'
