@@ -10,8 +10,8 @@ class CustomCrawler
     unless depth < 0
       begin
         f = @cw.get(base_url)
-      rescue
-        puts "a connection was refused, move on"
+      rescue => e
+        puts "a connection was refused, move on: ERROR: #{e.inspect}"
       end
       if f && f[:status_code] == 200 #&& !f.is_image?
         f[:body].force_encoding('iso-8859-1').encode('utf-8')
