@@ -7,5 +7,10 @@
 Result<br>
 Hit Score: <%= hit.score%><br>
 <a href="<%=hit.result.base_url%>"><%= hit.result.base_url%></a><br><br>
+<% @usersearch.hits.each do |hit| %>
+  <% hit.highlights(:body).each do |highlight| %>
+    <li> <%= highlight.format -%> </li>
+  <% end %>
+<% end -%>
 <%end%>
 
