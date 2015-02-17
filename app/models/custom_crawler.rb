@@ -7,6 +7,7 @@ class CustomCrawler
   end
 
   def recursive_get(base_url, depth = 2)
+    target = Target.find_by(base_url: base_url)
     unless depth < 0
       begin
         f = @cw.get(base_url)
@@ -15,8 +16,9 @@ class CustomCrawler
       end
       if f && f[:status_code] == 200 #&& !f.is_image?
         f[:body].force_encoding('iso-8859-1').encode('utf-8')
-        checksum = Digest::MD5.hexdigest(f[:body].to_s)
-        Page.create(base_url: base_url, body: f[:body], checksum: checksum) unless Page.find_by(base_url: base_url)
+        sanitized_file = Sanitize.document(f[:body], target.options_hash)
+        checksum = Digest::MD5.hexdigest(sanitized_file.to_s)
+        Page.create(base_url: base_url, body: sanitized_file, checksum: checksum) unless Page.find_by(base_url: base_url)
         f[:links][:links].each { |link| recursive_get(link, depth-1) }
       end
     end
