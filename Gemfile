@@ -47,8 +47,12 @@ gem 'connection_pool'
 gem 'capybara'
 gem 'rack_session_access'
 gem 'rails_12factor'
+gem "fakeweb", "~> 1.3"
+<<<<<<< HEAD
 
 gem 'clockwork'
+=======
+>>>>>>> 3077b55895f33effc51090adc48a21c3f1b91f48
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -59,7 +63,6 @@ gem 'clockwork'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
   gem 'rspec-rails', '~> 3.0'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
