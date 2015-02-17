@@ -48,8 +48,11 @@ gem 'capybara'
 gem 'rack_session_access'
 gem 'rails_12factor'
 gem "fakeweb", "~> 1.3"
+<<<<<<< HEAD
 
 gem 'clockwork'
+=======
+>>>>>>> started speccing custom_crawler
 
 # Use Unicorn as the app server
 # gem 'unicorn'
