@@ -1,21 +1,20 @@
 class PagesController < ApplicationController
 
-# before_action :authenticate_user!
+before_action :authenticate_user!
 
   def search
-    if params[:search].blank?
-      render 'search'
-    end
+  @query = SearchQuery.find_by(user_id: current_user.id)
+  term = @query.search_string if @query
 
-    if Page.count > 0
+    if term
       @usersearch = Page.search do
-        fulltext params[:search] do
+        fulltext term do
           highlight :body
         end
       end
       @results_found = @usersearch.hits
     else
-      @message = "Start your first search"
+      @message = "No results found"
     end
   end
 
