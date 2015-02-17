@@ -4,6 +4,7 @@
 	<nav>
 		<ul>
 			<li id="nav-menu"><%= link_to 'Scraper', scrapers_path %></li>
+			<li id="nav-menu"><%= link_to 'SearchQuery', search_queries_path %></li>
 			<% if user_signed_in? %>
 		  <li id="nav-menu"><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
 		  <% else %>
