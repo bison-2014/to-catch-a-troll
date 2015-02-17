@@ -25,11 +25,7 @@ class CustomCrawler
         && f[:status_code] == 200
         && ![".jpg", ".png", ".gif", ".tiff", ".swf"].any? {|extension| f[:base_url].include? (extension)}
         f[:body].force_encoding('iso-8859-1').encode('utf-8')
-<<<<<<< HEAD
-        sanitized_file = Sanitize.document(f[:body], options_hash)
-=======
         sanitized_file = Sanitize.document(f[:body], options)
->>>>>>> 3077b55895f33effc51090adc48a21c3f1b91f48
         Page.create(base_url: base_url, body: sanitized_file, target_id: target.id)
         f[:links][:links].each { |link| recursive_get(link, depth-1) }
       end
