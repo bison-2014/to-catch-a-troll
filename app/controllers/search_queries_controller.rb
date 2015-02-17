@@ -23,6 +23,7 @@ class SearchQueriesController < ApplicationController
   def create
     @search_query = SearchQuery.create(user: current_user)
     @search_query.update_attributes(search_query_params)
+    @search_query.add_targets
     redirect_to home_path
   end
 

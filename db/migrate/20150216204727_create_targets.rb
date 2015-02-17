@@ -4,6 +4,7 @@ class CreateTargets < ActiveRecord::Migration
       t.string  :name
       t.string  :base_url
       t.string  :sanitize_options
+      t.integer :default_depth
 
       t.timestamps
     end
