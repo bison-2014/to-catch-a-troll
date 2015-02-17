@@ -1,9 +1,10 @@
 class CustomCrawler
   require 'digest/md5'
 
-  def initialize
+  def initialize(target_id)
     option_hash = { crawl_limit_by_page: true }
     @cw = Cobweb.new(option_hash)
+    @target = Target.find(target_id)
   end
 
 <<<<<<< HEAD
@@ -32,15 +33,20 @@ class CustomCrawler
 =======
 >>>>>>> 75d47a9... custom_crawler model clean
     unless depth < 0
-      if (target = Target.find_by(base_url: base_url))
-        options = eval(target.sanitize_options)
+      if @target
+       options = eval(@target.sanitize_options)
       else
-        options = { elements: ["html", "div", "p", "span"] }
+        options = { elements: ['html', 'div', 'p', 'span'] }
       end
+
       begin
         f = @cw.get(base_url)
       rescue => e
+<<<<<<< HEAD
         puts "a connection was refused, move on: ERROR: #{e.inspect}"
+=======
+        puts "a connection is refused, move on: ERROR #{e.inspect}"
+>>>>>>> 03b854f... fixed Sanitize, now saving pages
       end
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -64,6 +70,8 @@ class CustomCrawler
         page.destroy
       end
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
       if f && f[:status_code] == 200 && ![".jpg", ".png", ".gif"].any? {|extension| f[:base_url].include? (extension)}
 >>>>>>> a5ad763... crawler has target
 =======
@@ -75,13 +83,23 @@ class CustomCrawler
 =======
         && ![".jpg", ".png", ".gif", ".tiff", ".swf"].any? {|extension| f[:base_url].include? (extension)}
 >>>>>>> 75d47a9... custom_crawler model clean
-        f[:body].force_encoding('iso-8859-1').encode('utf-8')
-<<<<<<< HEAD
-        sanitized_file = Sanitize.document(f[:body], options_hash)
 =======
+      if f &&
+        f[:status_code] == 200 &&
+        ![".jpg", ".png", ".gif", ".tiff", ".swf"].any? {|extension| f[:base_url].include? (extension)}
+>>>>>>> 6241cbb... resolved merge conflict
+=======
+      if f && f[:status_code] == 200 && ![".jpg", ".png", ".gif", ".tiff", ".swf"].any? {|extension| f[:base_url].include? (extension)}
+<<<<<<< HEAD
+        puts "inside conditional"
+>>>>>>> e8d66a4... resolving merge conflict
+=======
+>>>>>>> 03b854f... fixed Sanitize, now saving pages
+        f[:body].force_encoding('iso-8859-1').encode('utf-8')
         sanitized_file = Sanitize.document(f[:body], options)
->>>>>>> 3077b55895f33effc51090adc48a21c3f1b91f48
-        Page.create(base_url: base_url, body: sanitized_file, target_id: target.id)
+        Page.create(base_url: base_url, body: sanitized_file, target_id: @target.id)
+
+        # Page.create(base_url: base_url, body: f[:body], target_id: @target.id)
         f[:links][:links].each { |link| recursive_get(link, depth-1) }
       end
     end
