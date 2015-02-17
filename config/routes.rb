@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   mount Resque::Server, :at => "/resque"
-  
+
   devise_for :users
 
   devise_scope :user do
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :search_queries, only: [:index, :new, :create, :update, :delete]
+  resources :search_queries, only: [:index, :new, :create, :edit, :update, :delete]
   # , controllers: {
   #   sessions: 'sessions'
   #  }
