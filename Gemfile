@@ -31,6 +31,8 @@ gem 'slop'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 
+gem 'foreman'
+
 # For Background jobs
 gem 'resque', require: "resque/server"
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
