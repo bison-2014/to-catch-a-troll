@@ -1,18 +1,22 @@
 class ScrapersController < ApplicationController
 
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
     @scrapers = Scraper.all
   end
 
   def new
-    @scraper = Scraper.new
+    @targets = []
+
+    @targets << Target.find(1)
+    @targets << Target.find(2)
+    @targets << Target.find(188)
   end
 
   def create
-    @target = Target.find(1)
-    @scraper = Scraper.create(scraper_params)
+    @target = Target.find(target_params)
+    @scraper = Scraper.create(target: @target, url: @target.base_url)
 
     Resque.enqueue(TaskWorker, @target.id)
 
@@ -23,7 +27,11 @@ class ScrapersController < ApplicationController
   private
 
   def scraper_params
-    params.require(:scraper).permit(:url, :id)
+    params.require(:scraper).permit(:url)
+  end
+
+  def target_params
+    params.require(:target)
   end
 
 end
