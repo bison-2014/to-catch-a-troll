@@ -1,5 +1,12 @@
-<h1>Scraper Page for Admin</h1>
+<h1>Scraper for Admin</h1>
 
-<%= render 'form' %>
+<div class="row">
+  <div class="large-12 columns">
+    <%= form_tag('/scrapers') do |f| %>
+      <%= select_tag "target", options_from_collection_for_select(@targets, "id", "name") %>
+      <%= submit_tag 'Start Scraping' %>
+    <% end %>
+  </div>
+</div>
 
-
+<%= link_to 'Back', scrapers_path %>
