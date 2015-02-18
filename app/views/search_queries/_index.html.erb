@@ -7,11 +7,12 @@
     <li><span class='zip'>Zipcode: <%= @query.zipcode %></span></li>
     <li class='email'>Phone Number: <%= @query.phone_number %></li>
   </ul><br>
-  <%= link_to 'Edit', edit_search_query_path(@query), class:"button tiny radius " %>
+  <%= link_to 'Edit', edit_search_query_path(@query), class:"button tiny radius", id:"query-button" %>
 <% else %>
 
-	<%= link_to 'Start your first query', new_search_query_path, class:"button radius small" %>
-<% end %>
+	<%= link_to 'Start your first query', new_search_query_path, class:"button radius small", id:"query-button", remote: true %>
 
+<% end %>
+<div id="search-query-form" style="display:none;"></div>
 
 
