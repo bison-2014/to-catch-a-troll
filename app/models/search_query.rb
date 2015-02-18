@@ -7,3 +7,7 @@ class SearchQuery < ActiveRecord::Base
     search_array =[self.first_name,  self.last_name, self.address, self.zipcode, self.phone_number]
 	end
 end
+<<<<<<< HEAD
+=======
+
+>>>>>>> upstream/master

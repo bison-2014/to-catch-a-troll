@@ -43,6 +43,7 @@ class CustomCrawler
         f = @cw.get(base_url)
       rescue => e
 <<<<<<< HEAD
+<<<<<<< HEAD
         puts "a connection was refused, move on: ERROR: #{e.inspect}"
 =======
         puts "a connection is refused, move on: ERROR #{e.inspect}"
@@ -95,6 +96,14 @@ class CustomCrawler
 >>>>>>> e8d66a4... resolving merge conflict
 =======
 >>>>>>> 03b854f... fixed Sanitize, now saving pages
+=======
+        puts "a connection is refused, move on: ERROR #{e.inspect}"
+      end
+      if page = Page.find_by(base_url: base_url)
+        page.destroy
+      end
+      if f && f[:status_code] == 200 && ![".jpg", ".png", ".gif", ".tiff", ".swf"].any? {|extension| f[:base_url].include? (extension)}
+>>>>>>> upstream/master
         f[:body].force_encoding('iso-8859-1').encode('utf-8')
         sanitized_file = Sanitize.document(f[:body], options)
         Page.create(base_url: base_url, body: sanitized_file, target_id: @target.id)
@@ -106,8 +115,11 @@ class CustomCrawler
     nil
   end
 <<<<<<< HEAD
+<<<<<<< HEAD
 end
 =======
+=======
+>>>>>>> upstream/master
 
 end
 >>>>>>> 75d47a9... custom_crawler model clean

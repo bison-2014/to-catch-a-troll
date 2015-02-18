@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> upstream/master
 require 'rails_helper'
 # require 'custom_crawler'
 
@@ -25,6 +28,9 @@ HEEJIN
   describe "#recursive_get" do
     xit "retrieves the body associated with the base url" do
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> upstream/master
       @ccrawler.recursive_get("http://example.com/troll1", 0)
       expect (Page.last)[:body].to eq(body)
     end
@@ -52,6 +58,7 @@ HEEJIN
   #     expect (Page.last[:body]).to eq(body)
   #   end
   # end
+<<<<<<< HEAD
 =======
 require 'spec_helper'
 =======
@@ -113,4 +120,6 @@ HEEJIN
   #   end
   # end
 >>>>>>> 4d040ac... resolved conflict
+=======
+>>>>>>> upstream/master
 end

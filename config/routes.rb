@@ -22,4 +22,8 @@ Rails.application.routes.draw do
 
   get '/home' => 'pages#search'
   get '/search' => 'pages#search'
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> upstream/master

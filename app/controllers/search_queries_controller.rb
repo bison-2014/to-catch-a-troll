@@ -35,4 +35,8 @@ class SearchQueriesController < ApplicationController
     params.require(:search_query).permit(:first_name, :last_name, :address, :zipcode, :phone_number)
   end
 
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> upstream/master
