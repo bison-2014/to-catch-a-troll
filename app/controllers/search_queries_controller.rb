@@ -2,9 +2,8 @@ class SearchQueriesController < ApplicationController
 
   before_action :authenticate_user!
 
-  def index
-    @search_query = SearchQuery.find_by(user_id: current_user.id) if current_user
-  end
+  before_action :search_queries, only: [:index, :create]
+  respond_to :html, :js
 
   def new
     @search_query = SearchQuery.new
@@ -29,6 +28,10 @@ class SearchQueriesController < ApplicationController
 
 
   private
+
+  def all_queries
+    @search_queries = SearchQuery.find_by(user_id: current_user.id)
+  end
 
   def search_query_params
     params.require(:search_query).permit(:first_name, :last_name, :address, :zipcode, :phone_number)
