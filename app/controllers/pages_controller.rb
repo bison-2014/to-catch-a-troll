@@ -6,6 +6,8 @@ before_action :authenticate_user!
   @query = SearchQuery.find_by(user_id: current_user.id)
   user_terms = @query.search_array if @query
   the_targets = params[:target]
+    puts params
+    puts the_targets
 
     if user_terms
       @usersearch = Page.search do
