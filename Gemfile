@@ -50,7 +50,7 @@ gem 'rails_12factor'
 gem "fakeweb", "~> 1.3"
 
 gem 'clockwork'
-
+gem 'sanitize'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
