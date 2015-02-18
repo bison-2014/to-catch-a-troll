@@ -3,13 +3,12 @@
 
 	<nav>
 		<ul>
-			<li><a class='item'><%= link_to 'Scraper', scrapers_path %></a></li>
 			<% if user_signed_in? %>
 		  <li><a class='item'><%= link_to 'Flags', flags_path %></a></li>
 		  <li><a class='item'><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></a></li>
 
 		  <% else %>
-		  <li><a class='item'><%= link_to 'Login', new_user_session_path %></a>
+		  <!-- <li><a class='item'><#%=# link_to 'Login', new_user_session_path %#></a> -->
 		  <% end %></li>
 		</ul>
 	</nav>
