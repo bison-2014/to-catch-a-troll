@@ -7,6 +7,7 @@ class PagesController < ApplicationController
 
     @targets = []
     @targets = params[:target][:ids] if params[:target]
+    @the_targets = @targets
 
     searcher = UserPageSearch.new(user: current_user)
 
