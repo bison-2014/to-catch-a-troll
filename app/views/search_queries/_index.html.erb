@@ -1,13 +1,16 @@
 
 <% if @query %>
 <h1>Your profile information</h1>
-  <h3>Name: <%= @query.first_name %> <%= @query.last_name %><h3/>
-  <h3>Address: <%= @query.address %><h3/>
-  <h3>Zipcode: <%= @query.zipcode %><h3/>
-  <h3>Phone Number: <%= @query.phone_number %><h3/>
-  <%= link_to 'Edit your Profile', edit_search_query_path(@query) %>
+  <ul class='vcard'>
+    <li class='fn'>Name: <%= @query.first_name %> <%= @query.last_name %></li>
+    <li class='street-address'>Address: <%= @query.address %></li>
+    <li><span class='zip'>Zipcode: <%= @query.zipcode %></span></li>
+    <li class='email'>Phone Number: <%= @query.phone_number %></li>
+  </ul><br>
+  <%= link_to 'Edit', edit_search_query_path(@query), class:"button tiny radius " %>
 <% else %>
-	<%= link_to 'Enter your Profile Information', new_search_query_path %>
+
+	<%= link_to 'Start your first query', new_search_query_path, class:"button radius small" %>
 <% end %>
 
 

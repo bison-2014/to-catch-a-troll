@@ -10,7 +10,7 @@ before_action :authenticate_user!
 
     if user_terms
       @usersearch = Page.search do
-        with(:target_id, the_target )
+        # with(:target_id, the_target ) if the_target
         fulltext user_terms do
           highlight :body
         end

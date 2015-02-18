@@ -1,7 +1,8 @@
 
 <%= render 'search_queries/index' %>
-
-<%= form_tag("/search", method: "get") do %>
+<div class= 'row'>
+<div class='large-12 columns'>
+<%=form_tag("/search", method: "get") do %>
   <%= label_tag(:target, "1") %>
   <%= radio_button_tag(:target, "1") %>
    <%= label_tag(:target, "2") %>
@@ -11,6 +12,7 @@
 
   <%= submit_tag("search") %>
 <% end %>
-
+</div>
+</div>
 <%= render 'results' if @results_found %>
 

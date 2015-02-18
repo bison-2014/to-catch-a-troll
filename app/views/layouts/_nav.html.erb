@@ -1,14 +1,15 @@
 <header>
-	<p id="logo">To Catch A Troll</p>
+<div class='icon-bar three-up'>
 
 	<nav>
 		<ul>
-			<li id="nav-menu"><%= link_to 'Scraper', scrapers_path %></li>
+			<li><a class='item'><%= link_to 'Scraper', scrapers_path %></a></li>
 			<% if user_signed_in? %>
-		  <li id="nav-menu"><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+		  <li><a class='item'><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></a></li>
 		  <% else %>
-		  <li id="nav-menu"><%= link_to 'Login', new_user_session_path %></li>
-		  <% end %>
+		  <li><a class='item'><%= link_to 'Login', new_user_session_path %></a>
+		  <% end %></li>
 		</ul>
 	</nav>
+</div>
 </header>

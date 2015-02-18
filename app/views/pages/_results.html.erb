@@ -1,16 +1,17 @@
 <%=@message%>
 <h1>Your Profile Information Report</h1>
-<h2>Results found: <%= @results_found.count %></h2>
+<h4 class='subheader'>Results found: <%= @results_found.count %></h4>
 
   <% @usersearch.hits.each do |hit| %>
-  <div class="search_result">
+  <div class="panel">
 
     <% hit.highlights(:body).each do |highlight| %>
-  <p class="highlight"> <%= highlight.format {|word| "#{word}" }%></p>
+  <dl>
+  <dt> <%= highlight.format {|word| "#{word}" }%></dt>
   <% end %>
 
-  Hit Score: <%= hit.score%><br>
-  Scraped at: <%=hit.result.updated_at.strftime("%m-%d-%Y")%><br>
+  <dd>Hit Score: <%= hit.score%></dd>
+  <dd>Scraped at: <%=hit.result.updated_at.strftime("%m-%d-%Y")%><br></dd>
   <a class="search_link" href="<%=hit.result.base_url%>" target="_blank"><%= hit.result.base_url%></a><br><br>
   </div>
   <% end %>
