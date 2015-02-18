@@ -11,9 +11,11 @@ class ScrapersController < ApplicationController
   end
 
   def create
-    @scraper = Scraper.create(url: target.url)
+    @target = Target.find(1)
+    @scraper = Scraper.create(scraper_params)
 
-    Resque.enqueue(TaskWorker, target.id)
+    Resque.enqueue(TaskWorker, @target.id)
+
     redirect_to scrapers_path
   end
 
