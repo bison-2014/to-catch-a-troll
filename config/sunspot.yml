@@ -13,7 +13,7 @@ development:
     port: 8982
     log_level: INFO
     path: /solr/default
-    # solr_home: solr
+    solr_home: solr
 
 test:
   solr:
@@ -21,4 +21,4 @@ test:
     port: 8981
     log_level: WARNING
     path: /solr/default
-    # solr_home: solr
+    solr_home: solr
