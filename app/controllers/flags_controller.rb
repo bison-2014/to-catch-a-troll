@@ -1,12 +1,11 @@
 class FlagsController < ApplicationController
 
   def create
-
     page = Page.find(params[:'hit-number'])
     flag = Flag.create(user: current_user,
-        highlight: params[:highlight],
-        url: params[:url],
-        score: params[:score].to_f)
+                  highlight: params[:highlight],
+                        url: params[:url],
+                      score: params[:score].to_f)
   end
 
   def index

@@ -1,11 +1,14 @@
 <h2>Your Flagged Posts</h2>
 
 
+<% if @flags.empty? %>
+  <div>You have no flagged pages</div>
+<% end %>
 
- <% @flags.each do |flag| %>
- <div class="panel">
-<dl>Content: <%=flag.highlight%></dl>
-<dl>Hit Score: <%=flag.score%></dl>
-<dl>Url: <%=flag.url%></dl>
+<% @flags.each do |flag| %>
+<div class="panel">
+  <dl>Content: <%=flag.highlight%></dl>
+  <dl>Hit Score: <%=flag.score%></dl>
+  <dl>Url: <%=flag.url%></dl>
 </div>
-  <% end %>
+<% end %>
