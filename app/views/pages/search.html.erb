@@ -1,17 +1,20 @@
 
 <%= render 'search_queries/index' %>
+<% if @query %>
 <div class= 'row'>
 <div class='large-12 columns'>
 <%=form_tag("/search", method: "get") do %>
-  <%= label_tag(:target, "1") %>
-  <%= radio_button_tag(:target, "1") %>
-   <%= label_tag(:target, "2") %>
-  <%= radio_button_tag(:target, "2") %>
-   <%= label_tag(:target, "3") %>
-  <%= radio_button_tag(:target, "3") %>
+  <%= check_box_tag(:target[1], value=1) %>
+  <%= label_tag("4chan") %>
+  <%= check_box_tag(:target[2], value=1) %>
+  <%= label_tag("8chan") %>
+  <%= check_box_tag(:target[3], value=1) %>
+  <%= label_tag("local craigslist") %>
 
   <%= submit_tag("search") %>
 <% end %>
+<% end %>
+
 </div>
 </div>
 <%= render 'results' if @results_found %>
