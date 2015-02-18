@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ScrapersController, type: :controller do
 
 	describe "GET #index" do
-		xxit "lists all scrapers" do
+		xit "lists all scrapers" do
 			scraper = Scraper.create
       get :index
       expect(assigns(:scrapers)).to eq([scrapers])
