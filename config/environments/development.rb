@@ -17,17 +17,19 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
     config.action_mailer.smtp_settings = {
       enable_starttls_auto: true,
       address: 'smtp.gmail.com',
       port: 587,
-      authentication: :plain,
+      authentication: 'plain',
       domain: 'to-catch-a-troll.herokuapp.com',
       user_name: 'patroll.app@gmail.com',
-      password: 'tocatchatroll' 
+      password: 'tocatchatroll'
     }
-
+  # address: 'smtp.gmail.com',
+  #     port: 587,
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
