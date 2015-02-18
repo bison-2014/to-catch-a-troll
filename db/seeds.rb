@@ -20,6 +20,6 @@ craigslist_subdomains.each do |subdomain|
   Target.create!(
     name: "craigslist",
     base_url: subdomain,
-    sanitize_options: {elements: ["html", "div", "p", "span"] }.to_s,
+    sanitize_options: { elements: ["html", "div", "p", "span"] }.to_s,
     default_depth: 3 )
 end
