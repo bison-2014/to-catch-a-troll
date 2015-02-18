@@ -11,7 +11,7 @@ class ScrapersController < ApplicationController
 
     @targets << Target.find(1)
     @targets << Target.find(2)
-    @targets << Target.find(188)
+    # @targets << Target.find(188)
   end
 
   def create
