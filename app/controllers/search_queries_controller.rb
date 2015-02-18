@@ -1,6 +1,6 @@
 class SearchQueriesController < ApplicationController
 
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def index
     @search_query = SearchQuery.find_by(user_id: current_user.id) if current_user
@@ -26,7 +26,6 @@ class SearchQueriesController < ApplicationController
 
     redirect_to home_path
   end
-
 
 
   private
