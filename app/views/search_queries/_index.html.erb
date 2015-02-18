@@ -10,9 +10,8 @@
   <%= link_to 'Edit', edit_search_query_path(@query), class:"button tiny radius", id:"query-button" %>
 <% else %>
 
-	<%= link_to 'Start your first query', new_search_query_path, class:"button radius small", id:"query-button", remote: true %>
+  <%= link_to 'Start your first query', new_search_query_path, class:"button radius small", id:"query-button", remote: true %>
 
 <% end %>
 <div id="search-query-form" style="display:none;"></div>
-
 
