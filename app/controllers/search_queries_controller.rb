@@ -2,7 +2,7 @@ class SearchQueriesController < ApplicationController
 
   before_action :authenticate_user!
 
-  before_action :search_queries, only: [:index, :create]
+  before_action :all_queries, only: [:index, :create]
   respond_to :html, :js
 
   def new
