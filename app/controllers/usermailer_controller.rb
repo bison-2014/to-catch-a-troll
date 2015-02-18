@@ -5,7 +5,7 @@ class UsermailerController < ApplicationController
   end
   
   def create
-    Usermailer.deliver_gmail_message
+    Usermailer.gmail_message.deliver_now
     flash[:notice]= "Sent"
     redirect_to "/home"
   end

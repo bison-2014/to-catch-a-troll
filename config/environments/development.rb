@@ -23,7 +23,7 @@ Rails.application.configure do
       enable_starttls_auto: true,
       address: 'smtp.gmail.com',
       port: 587, 
-      authentication: 'plain',
+      authentication: :plain,
       domain: 'to-catch-a-troll.herokuapp.com',
       user_name: 'patroll.app@gmail.com',
       password: 'tocatchatroll'
