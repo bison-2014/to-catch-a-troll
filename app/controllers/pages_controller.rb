@@ -17,6 +17,7 @@ before_action :authenticate_user!
         end
       end
       @results_found = @usersearch.hits
+
     else
       @message = "No results found"
     end

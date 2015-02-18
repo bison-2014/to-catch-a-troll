@@ -26,21 +26,13 @@ body{
   color: white;
 }
 
-/*p#logo {
-	display: inline-block;
-	width: 200px;
-}*/
+.foundicon-flag{
+  color:gray;
+}
 
-/*nav, nav ul {
-	display: inline-block;
-	float: right;
-}*/
-/*
-li#nav-menu {
-	display: inline-block;
-	width: 100px;
-}*/
-
+.alert{
+  color:red;
+}
 
 a.search_link{
   text-decoration: none;
