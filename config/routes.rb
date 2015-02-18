@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'usermailer/create'
+
+  get 'usermailer/index'
+
   mount Resque::Server, :at => "/resque"
 
   devise_for :users
