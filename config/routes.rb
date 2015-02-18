@@ -20,6 +20,9 @@ Rails.application.routes.draw do
 
   resources :pages, :only => [:index, :new, :show, :create, :update, :delete]
 
+  resources :usermailer, only: [:index, :create]
+  get 'usermailer/create'
+  get 'usermailer/index'
   get '/home' => 'pages#search'
   get '/search' => 'pages#search'
 end
