@@ -1,17 +1,20 @@
-<%= render 'search_queries/index' %>
+<div class="row">
 
-<% if @query %>
-
-  <div class= 'row'>
-    <div class='large-12 columns'>
 
     <%= form_tag("/search", method: "get") %>
       <%= collection_check_boxes( :target, :ids, @all_targets, :id, :name, checked: @targets ) %>
       <%= submit_tag 'Search' %>
 
-    </div>
+  <div class="column medium-9">
+    <%= render 'results' if @results_found %>
   </div>
 
-<% end %>
+  <div class="column medium-3">
+    <%= render 'search_queries/index' %>
+  </div>
 
-<%= render 'results' if @results_found %>
+</div>
+
+
+
+

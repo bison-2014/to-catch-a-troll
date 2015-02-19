@@ -1,13 +1,19 @@
+<div class="row">
+  <div class="large-12 columns">
 <div class="panel">
 
  <% hit.highlights(:body).each do |highlight| %>
- <i class="foundicon-flag" id="flag-for-<%=hit.result.id%>"></i>
-  <dl value="<%=hit.result.id%>">
-  <dt class="high"> <%= highlight.format {|word| "#{word}" }%></dt>
-  <% end %>
-
-  <dd class="score">Hit Score: <%= hit.score%></dd>
-  <dd>Scraped at: <%=hit.result.updated_at.strftime("%m-%d-%Y")%><br></dd>
-  <a class="search_link" href="<%=hit.result.base_url%>" target="_blank"><%= hit.result.base_url%></a><br><br>
-  </dl>
+  <i class="foundicon-flag flag" id="flag-for-<%=hit.result.id%>"></i>
+    <a class="search_link" href="<%=hit.result.base_url%>" target="_blank"><%= hit.result.base_url%></a>
+      <dd>Scraped at: <%=hit.result.updated_at.strftime("%m-%d-%Y")%>&nbsp;&nbsp;&nbsp;&nbsp;Hit Score: <%= hit.score%></dd>
+        <dl value="<%=hit.result.id%>"></dl>
+          <div class="highlighted">
+          <h5>
+            <strong>
+            <%= highlight.format {|word| "#{word}" }%></div>
+          </strong>
+        </h5>
+        <% end %>
+    </div>
+  </div>
 </div>
