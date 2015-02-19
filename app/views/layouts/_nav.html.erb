@@ -1,17 +1,17 @@
 <header>
-<div class='icon-bar three-up'>
-
+<% if user_signed_in? %>
 	<nav>
 		<ul>
-			<% if user_signed_in? %>
-		  <li><a class='item'><%= link_to 'Flags', flags_path %></a></li>
-		  <li><a class='item'><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></a></li>
+			<div class="panel clearfix">
+			<h3><a class='logo link left'> <%= image_tag "Patroll-logo-black-small.png" %></h3>
+		  <li><a class='item right'><%= link_to 'Flags', flags_path %></a></li>
+		  <li><a class='item right'><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></a></li>
+			</div>
 
 		  <% else %>
-		  <!-- <li><a class='item'><#%=# link_to 'Login', new_user_session_path %#></a> -->
-		  <% end %></li>
+		  <% end %>
+			</li>
 		</ul>
 	</nav>
-</div>
 </header>
 

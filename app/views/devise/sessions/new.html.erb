@@ -1,8 +1,12 @@
+<div class="loginpage">
+  <div class="logo">
+    <%= image_tag "Patroll-logo-white.png" %>
+  </div>
 
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <fieldset>
-    <legend>Login</legend>
+    <legend class="home-legend">Login</legend>
 
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -20,3 +24,4 @@
 <% end %>
 <%= render "devise/shared/links" %>
 </fieldset>
+</div>
