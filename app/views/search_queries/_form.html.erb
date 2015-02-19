@@ -6,7 +6,7 @@
       <% end %>
       </ul>
   <% end %>
-  <fieldset>
+  <fieldset class="fieldset user">
 
     <div class="form">
       <%= f.label :first_name %>
@@ -19,7 +19,7 @@
       <%= f.text_field :zipcode %><br />
       <%= f.label :phone_number %>
       <%= f.text_field :phone_number %><br />
-      <%= f.submit %>
+      <%= f.submit :class=>'button small radius' %>
     </div>
 
   </fieldset>

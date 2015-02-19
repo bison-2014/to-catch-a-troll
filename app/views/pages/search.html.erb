@@ -1,15 +1,12 @@
-<div class="row">
+<div class="patrol-search-page">
 
 
-    <%= form_tag("/search", method: "get") %>
-      <%= collection_check_boxes( :target, :ids, @all_targets, :id, :name, checked: @targets ) %>
-      <%= submit_tag 'Search' %>
 
-  <div class="column medium-9">
+  <div class="column large-9">
     <%= render 'results' if @results_found %>
   </div>
 
-  <div class="column medium-3">
+  <div class="column large-3">
     <%= render 'search_queries/index' %>
   </div>
 
