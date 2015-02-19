@@ -68,8 +68,6 @@ ActiveRecord::Schema.define(version: 20150219174703) do
     t.integer  "default_depth"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "body"
-    t.text     "raw_file"
   end
 
   create_table "users", force: :cascade do |t|
