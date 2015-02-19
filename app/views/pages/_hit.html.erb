@@ -1,0 +1,13 @@
+<div class="panel">
+
+ <% hit.highlights(:body).each do |highlight| %>
+ <i class="foundicon-flag" id="flag-for-<%=hit.result.id%>"></i>
+  <dl value="<%=hit.result.id%>">
+  <dt class="high"> <%= highlight.format {|word| "#{word}" }%></dt>
+  <% end %>
+
+  <dd class="score">Hit Score: <%= hit.score%></dd>
+  <dd>Scraped at: <%=hit.result.updated_at.strftime("%m-%d-%Y")%><br></dd>
+  <a class="search_link" href="<%=hit.result.base_url%>" target="_blank"><%= hit.result.base_url%></a><br><br>
+  </dl>
+</div>

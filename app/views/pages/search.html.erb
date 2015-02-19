@@ -6,7 +6,7 @@
     <div class='large-12 columns'>
 
     <%= form_tag("/search", method: "get") %>
-      <%= collection_check_boxes( :target, :ids, @targets, :id, :name, checked: @the_targets ) %>
+      <%= collection_check_boxes( :target, :ids, @targets, :id, :name, checked: @targets ) %>
       <%= submit_tag 'Search' %>
 
     </div>
