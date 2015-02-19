@@ -7,11 +7,7 @@ class ScrapersController < ApplicationController
   end
 
   def new
-    @targets = []
-
-    @targets << Target.find(1)
-    @targets << Target.find(2)
-    # @targets << Target.find(188)
+    @targets = [Target.find(1), Target.find(2)]
   end
 
   def create

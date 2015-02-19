@@ -3,19 +3,11 @@ class PagesController < ApplicationController
   before_action :authenticate_user!
 
   def search
-    # @query = SearchQuery.find_by(user_id: current_user.id)
-    # user_terms = @query.search_array if @query
+    @all_targets = [Target.find(1), Target.find(2)]
 
     @targets = []
     @targets = params[:target][:ids] if params[:target]
 
-    # if user_terms
-    #   @usersearch = Page.search do
-    #     with(:target_id).any_of(@targets) if @targets
-    #     fulltext user_terms do
-    #       highlight :body
-    #     end
-    #   end
     searcher = UserPageSearch.new(user: current_user)
 
     @usersearch = searcher.search(@targets)
