@@ -25,13 +25,10 @@ body{
   }
 
 .top-bar{
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .top-bar .name h1 a:before {
-    background-image: url('patroll-logo-black-small');
-    background-repeat: no-repeat;
-    content: "";
     display: inline-block;
     height: 18px;
     margin-right: 10px;
@@ -98,9 +95,24 @@ nav li{
   padding: 4px 0;
   display: inline;
   margin: 0;
+  word-wrap: break-word;
 }
 
 .highlighted h5 strong{
 position: relative;
 left: -10px;
+}
+
+.vcard{
+  width: 20em;
+  background-color:#e4e1d7;
+}
+
+.fieldset user{
+  background-color: #e4e1d7;
+}
+
+.profile-box{
+  margin-top: 25em;
+  position: fixed;
 }

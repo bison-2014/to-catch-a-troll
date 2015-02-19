@@ -3,10 +3,16 @@
 
 <%=@message%>
   <% if @query %>
+
   <h1>Your Report</h1>
 
+    <h5 class="subheader">Filter your results</h5>
+    <%= form_tag("/search", method: "get") %>
+      <%= collection_check_boxes( :target, :ids, @all_targets, :id, :name, checked: @targets ) %>
+      <%= submit_tag 'Search' %>
 
     <h4 class='subheader'>Results found: <%= @results_found.count %></h4>
+
     <%= render partial: 'hit', collection: @results_found, as: :hit %>
 
 <% end %>
