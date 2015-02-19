@@ -19,7 +19,10 @@ class SearchWorker
       usersearch = searcher.search
 
       if usersearch.hits
+        user= User.find_by(id: query.user_id)
+        email= user.email
         Rails.logger.info "UserPageSearch hits!"
+        Usermailer.gmail_message(email).deliver_now
         # send email
       else
         Rails.logger.info "UserPageSearch miss ..."

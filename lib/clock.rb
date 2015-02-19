@@ -6,7 +6,7 @@ module Clockwork
 
 every(12.hour, 'resque.enqueue'){ Resque.enqueue(TaskWorker, 1)}
 every(12.hour, 'resque.enqueue'){ Resque.enqueue(TaskWorker, 2)}
-every(8.hour, 'search.enqueue'){Resque.enqueue(SearchWorker)}
+every(1.minutes, 'search.enqueue'){Resque.enqueue(SearchWorker)}
 # every(30.minutes, 'resque.enqueue'){ Resque.enqueue(TaskWorker, 1)}
 # every(30.minutes, 'resque.enqueue'){ Resque.enqueue(TaskWorker, 2)}
 #   every(10.seconds, 'taskworker.perform'){ Taskworker.perform(1) }
