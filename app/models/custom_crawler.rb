@@ -14,32 +14,29 @@ class CustomCrawler
     end
 
     unless depth < 0
-      if @target.sanitize_options
-       options = eval(@target.sanitize_options)
-      else
-        options = { elements: ['div', 'p', 'span'] }
-      end
-
       begin
         file = @cw.get(base_url)
       rescue => e
         puts "a connection is refused, move on: ERROR #{e.inspect}"
       end
 
-      if page = Page.find_by(base_url: base_url)
+      begin
+        raw_file = file[:body].encode('utf-8')
+      rescue => e
+        puts "encoding failed: ERROR #{e.inspect}"
+      end
+
+      if (page = Page.find_by(base_url: base_url))
         page.destroy
       end
 
-      if file &&
+      if file && raw_file &&
         file[:status_code] == 200 &&
         is_not_pic(file)
-
-        file[:body].force_encoding('iso-8859-1').encode('utf-8')
-
-        sanitized_file = sanitize(strip_tags(file[:body]))
+        sanitized_file = sanitize(strip_tags(raw_file))
         sanitized_file.gsub!(/[\t\n]+/," ").gsub!(/[\s]{2,}/," ")
 
-        Page.create(base_url: base_url, body: sanitized_file, target_id: @target.id)
+        Page.create(base_url: base_url, raw_file: raw_file, body: sanitized_file, target_id: @target.id)
         file[:links][:links].each { |link| recursive_get(link, depth-1) }
       end
 
