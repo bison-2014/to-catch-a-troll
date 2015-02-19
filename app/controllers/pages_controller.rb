@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   before_action :authenticate_user!
 
   def search
-    @all_targets = [Target.find(1), Target.find(2)]
+    @all_targets = Target.all
 
     @targets = []
     @targets = params[:target][:ids] if params[:target]
