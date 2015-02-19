@@ -1,7 +1,7 @@
 class CustomCrawler
   include ActionView::Helpers::SanitizeHelper
 
-  def initialize(target_id )
+  def initialize(target_id)
     option_hash = { crawl_limit_by_page: true }
     @cw = Cobweb.new(option_hash)
     @target = Target.find_by(id: target_id)
@@ -11,7 +11,17 @@ class CustomCrawler
     ![".jpg", ".png", ".gif", ".tiff", ".swf"].any? {|extension| my_link[:base_url].include? (extension)}
   end
 
+
   def recursive_get(base_url, depth = 2)
+
+    def full_path(link)
+      if (link.start_with?("http") || link.include?("www."))
+        link
+      else
+        @target.base_url + link
+      end
+    end
+
     unless depth < 0
       begin
         file = @cw.get(base_url)
@@ -42,7 +52,7 @@ class CustomCrawler
           target_id: @target.id)
       end
       if file
-        file[:links][:links].each { |link| recursive_get(link, depth-1) }
+        file[:links][:links].each { |link| recursive_get(full_path(link), depth-1) }
       end
     end
     nil
