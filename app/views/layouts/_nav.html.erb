@@ -1,17 +1,28 @@
 <header>
 <% if user_signed_in? %>
-	<nav>
-		<ul>
-			<div class="panel clearfix">
-			<h3><a class='logo link left'> <%= image_tag "Patroll-logo-black-small.png" %></h3>
-		  <li><a class='item right'><%= link_to 'Flags', flags_path %></a></li>
-		  <li><a class='item right'><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></a></li>
-			</div>
+
+<nav class="top-bar" id="mainmenu">
+    <ul class="title-area">
+        <li class="name">
+            <h1><%= link_to 'Patroll', home_path %></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+    	</ul>
+    	<section class="top-bar-section">
+    		<ul class="right">
+      <li><%= link_to 'My account',  edit_search_query_path(current_user) %></li>
+      <li><%= link_to 'Flags', flags_path %></li>
+      <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+
+        </ul>
+      </li>
+    </ul>
+  	  </section>
+	</nav>
 
 		  <% else %>
 		  <% end %>
-			</li>
-		</ul>
+
 	</nav>
 </header>
 

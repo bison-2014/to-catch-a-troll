@@ -5,9 +5,6 @@
   <% if @query %>
   <h1>Your Report</h1>
 
-    <%= form_tag("/search", method: "get") %>
-    <%= collection_check_boxes( :target, :ids, @targets, :id, :name, checked: @targets ) %>
-    <%= submit_tag 'Search' %>
 
     <h4 class='subheader'>Results found: <%= @results_found.count %></h4>
     <%= render partial: 'hit', collection: @results_found, as: :hit %>

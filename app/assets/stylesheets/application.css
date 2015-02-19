@@ -24,14 +24,21 @@ body{
   border-bottom: 4em solid black;
   }
 
+.top-bar{
+  margin-bottom: 20px;
+}
 
-.icon-bar{
-  background: #1F46FF;
-  color: white;
+.top-bar .name h1 a:before {
+    background-image: url('patroll-logo-black-small');
+    background-repeat: no-repeat;
+    content: "";
+    display: inline-block;
+    height: 18px;
+    margin-right: 10px;
+    position: relative;
+    width: 18px;
 }
-.icon-bar a{
-  color: white;
-}
+
 
 .logo{
   margin: 0 auto;
@@ -58,16 +65,16 @@ fieldset{
   margin: auto;
 }
 
-nav{
+/*nav{
   background-color: #e5e5e5;
 }
 
 nav li{
   display: inline-block;
   background-color: #e5e5e5;
-}
+}*/
 
-.row { background-color: white; }
+/*.row { background-color: white; }*/
 
 
 .flag {
