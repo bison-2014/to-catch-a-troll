@@ -1,6 +1,4 @@
 <header>
-<div class='icon-bar three-up'>
-
 	<nav>
 		<ul>
 			<% if user_signed_in? %>
@@ -8,10 +6,8 @@
 		  <li><a class='item'><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></a></li>
 
 		  <% else %>
-		  <!-- <li><a class='item'><#%=# link_to 'Login', new_user_session_path %#></a> -->
 		  <% end %></li>
 		</ul>
 	</nav>
-</div>
 </header>
 

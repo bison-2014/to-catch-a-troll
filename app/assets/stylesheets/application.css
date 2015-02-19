@@ -17,6 +17,7 @@
 body{
   font-family: 'Oxygen', sans-serif;
   margin: 10px;
+/*  background-color: black;*/
 }
 .icon-bar{
   background: #1F46FF;
@@ -24,6 +25,10 @@ body{
 }
 .icon-bar a{
   color: white;
+}
+
+.logo{
+  margin: 0 auto;
 }
 
 .foundicon-flag{
@@ -34,6 +39,9 @@ body{
   color:red;
 }
 
+.home-legend{
+  background-color: black;
+}
 a.search_link{
   text-decoration: none;
   color: #0066FF;
@@ -45,10 +53,10 @@ fieldset{
 }
 
 nav li{
-  display: inline;
+  display: inline-block;
   margin-left: 10px;
-  float: left;
+  float: right;
 }
 
-
+.row { background-color: white; }
 
