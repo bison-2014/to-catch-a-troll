@@ -5,7 +5,10 @@ class FlagsController < ApplicationController
     flag = Flag.create(user: current_user,
                   highlight: params[:highlight],
                         url: params[:url],
-                      score: params[:score].to_f)
+                      score: params[:score].to_f,
+                      body: page.body,
+                      raw_file: page.raw_file
+                      )
   end
 
   def index

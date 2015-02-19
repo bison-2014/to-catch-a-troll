@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150219012817) do
+ActiveRecord::Schema.define(version: 20150219174703) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,14 +29,16 @@ ActiveRecord::Schema.define(version: 20150219012817) do
     t.text     "highlight"
     t.text     "url"
     t.float    "score"
+    t.text     "body"
+    t.text     "raw_file"
   end
 
   create_table "pages", force: :cascade do |t|
     t.string   "base_url"
     t.text     "body"
+    t.integer  "target_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "checksum"
     t.text     "raw_file"
   end
 
@@ -66,11 +68,8 @@ ActiveRecord::Schema.define(version: 20150219012817) do
     t.integer  "default_depth"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "usermailers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "body"
+    t.text     "raw_file"
   end
 
   create_table "users", force: :cascade do |t|
