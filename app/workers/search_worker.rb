@@ -19,6 +19,8 @@ class SearchWorker
       usersearch = searcher.search
 
       if usersearch.hits
+
+        puts"IT'S GETTING TO EMAILS========"
         @user= User.find_by(id: query.user_id)
         Rails.logger.info "UserPageSearch hits!"
         Usermailer.gmail_message(@user).deliver_now
