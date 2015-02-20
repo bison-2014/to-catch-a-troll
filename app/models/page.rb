@@ -10,6 +10,5 @@ class Page < ActiveRecord::Base
     end
     integer   :target_id, :references => Target
   end
-#  handle_asynchronously :solr_index
 
 end
