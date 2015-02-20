@@ -16,7 +16,7 @@
 
 
 $(document).ready(function(){
-  $('.panel').on("click", '.foundicon-flag', function(event){
+  $('.panel').on("click", '.flag', function(event){
     event.preventDefault();
     $(this).toggleClass('alert');
     var my_div=$(this).parent();

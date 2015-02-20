@@ -76,10 +76,11 @@ nav li{
 
 .flag {
   display: inline-block;
+  font-size: 2em;
 }
 .page {
   .flag {
-    display: none;
+    display: inline-block;
   }
 }
 
