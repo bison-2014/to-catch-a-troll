@@ -17,7 +17,7 @@ class PagesController < ApplicationController
     else
       @message = "No results found"
     end
-
+# adding flags
     @query = searcher.query
   end
 
