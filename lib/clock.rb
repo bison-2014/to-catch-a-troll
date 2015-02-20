@@ -4,9 +4,9 @@ require './config/environment'
 
 module Clockwork
 
-every(120.hour, 'resque.enqueue'){ Resque.enqueue(TaskWorker, 1)}
-every(120.hour, 'resque.enqueue'){ Resque.enqueue(TaskWorker, 2)}
-every(120.hour, 'search.enqueue'){ Resque.enqueue(SearchWorker) }
+every(8.hour, 'resque.enqueue'){ Resque.enqueue(TaskWorker, 1)}
+every(8.hour, 'resque.enqueue'){ Resque.enqueue(TaskWorker, 2)}
+every(8.hour, 'search.enqueue'){ Resque.enqueue(SearchWorker) }
 # every(30.minutes, 'resque.enqueue'){ Resque.enqueue(TaskWorker, 1)}
 # every(30.minutes, 'resque.enqueue'){ Resque.enqueue(TaskWorker, 2)}
 #   every(10.seconds, 'taskworker.perform'){ Taskworker.perform(1) }
