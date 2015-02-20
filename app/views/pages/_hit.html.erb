@@ -2,9 +2,8 @@
 <div class="large-12 columns">
 <div class="panel">
 
-  <p>Hello I am here why aren't you listening?</p>
  <% hit.highlights(:body).each do |highlight| %>
-  <i class="foundicon-flag flag" id="flag-for-<%=hit.result.id%>"></i>
+  <i class="flag" id="flag-for-<%=hit.result.id%>">&#9873;</i>
     <a class="search_link" href="<%=hit.result.base_url%>" target="_blank"><%= hit.result.base_url%></a>
       <dd>Scraped at: <%=hit.result.updated_at.strftime("%m-%d-%Y")%>&nbsp;&nbsp;&nbsp;&nbsp;Hit Score: <%= sprintf "%.3f", hit.score%></dd>
         <dl value="<%=hit.result.id%>"></dl>
