@@ -82,7 +82,7 @@ nav li{
 }
 .page {
   .flag {
-    display: none;
+    display: inline-block;
   }
 }
 
