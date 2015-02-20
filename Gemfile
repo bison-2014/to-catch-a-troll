@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+gem 'foundation-icons-sass-rails'
+
 # For Background jobs
 gem 'cobweb', '~> 1.0.25'
 gem 'nokogiri'
