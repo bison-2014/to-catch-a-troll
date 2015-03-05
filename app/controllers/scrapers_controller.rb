@@ -14,7 +14,7 @@ class ScrapersController < ApplicationController
     @target = Target.find(target_params)
     @scraper = Scraper.create(target: @target, url: @target.base_url)
 
-    Resque.enqueue(TaskWorker, @target.id)
+    Resque.enqueue(ScrapeWorker, @target.id)
 
     redirect_to scrapers_path
   end
