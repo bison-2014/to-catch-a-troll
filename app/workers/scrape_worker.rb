@@ -1,4 +1,4 @@
-class TaskWorker
+class ScrapeWorker
   @queue = :task_queue
 
   def self.perform(target_id)

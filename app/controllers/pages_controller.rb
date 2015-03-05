@@ -21,8 +21,4 @@ class PagesController < ApplicationController
     @query = searcher.query
   end
 
-  def a_method
-    puts "hello"
-  end
-
 end
